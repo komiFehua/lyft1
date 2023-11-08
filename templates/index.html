@@ -1,1 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Styles for the button and answers */
+        .btn {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
 
+        .answer {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Questions and Answers</h1>
+    
+    <div id="question">
+        <p>Question 1: Who was the first President of the United States?</p>
+        <div class="answer">
+            <input type="radio" name="q1" value="wrong"> Thomas Jefferson
+        </div>
+        <div class="answer">
+            <input type="radio" name="q1" value="wrong"> John Adams
+        </div>
+        <div class="answer">
+            <input type="radio" name="q1" value="correct"> George Washington
+        </div>
+    </div>
+    
+    <div id="result"></div>
+    
+    <button class="btn" onclick="nextQuestion()">Next Question</button>
+    
+    <script>
+        let correctAnswers = 0;
+        let questionIndex = 1;
+        
+        function nextQuestion() {
+            const selectedAnswer = document.querySelector('input[name="q1"]:checked');
+            
+            if (selectedAnswer && selectedAnswer.value === "correct") {
+                correctAnswers++;
+            }
+            
+            document.querySelector('input[name="q1"]:checked').checked = false;
+            
+            questionIndex++;
+            
+            if (questionIndex === 1) {
+                document.getElementById('question').innerHTML = `
+                    <p>Question 2: Which ancient civilization built the pyramids in Egypt?</p>
+                    <div class="answer">
+                        <input type="radio" name="q1" value="wrong"> Romans
+                    </div>
+                    <div class="answer">
+                        <input type="radio" name="q2" value="wrong"> Greeks
+                    </div>
+                    <div class="answer">
+                        <input type="radio" name="q3" value="correct"> Egyptians
+                    </div>
+                `;
+            } else if (questionIndex === 2) {
+                document.getElementById('question').innerHTML = `
+                    <p>Question 3: What year did Christopher Columbus first arrive in the Americas?</p>
+                    <div class="answer">
+                        <input type="radio" name="q1" value="correct"> 1492
+                    </div>
+                    <div class="answer">
+                        <input type="radio" name="q2" value="wrong"> 1620
+                    </div>
+                    <div class="answer">
+                        <input type="radio" name="q3" value="wrong"> 1776
+                    </div>
+                `;
+            } else if (questionIndex === 3) {
+                document.getElementById('question').innerHTML = `
+                    <p>Question 4: Who was the first woman to fly solo across the Atlantic Ocean?</p>
+                    <div class="answer">
+                        <input type="radio" name="q1" value="correct"> Amelia Earhart
+                    </div>
+                    <div class="answer">
+                        <input type="radio" name="q2" value="wrong"> Bessie Coleman
+                    </div>
+                    <div class="answer">
+                        <input type="radio" name="q3" value="wrong"> Harriet Quimby
+                    </div>
+                `;
+            } else if (questionIndex === 4) {
+                document.getElementById('question').innerHTML = `
+                    <p>Question 5: Who was the 16th President of the United States?</p>
+                    <div class="answer">
+                        <input type="radio" name="q1" value="wrong"> Ulysses S. Grant
+                    </div>
+                    <div class="answer">
+                        <input type="radio" name="q2" value="correct"> Abraham Lincoln
+                    </div>
+                    <div class="answer">
+                        <input type="radio" name="q3" value="wrong"> Andrew Johnson
+                    </div>
+                `;
+            } else if (questionIndex === 5) {
+                document.getElementById('question').innerHTML = `
+                    <p>Question 6: In what year did the French Revolution begin?</p>
+                    <div class="answer">
+                        <input type="radio" name="q1" value="wrong"> 1776
+                    </div>
+                    <div class="answer">
+                        <input type="radio" name="q2" value="wrong"> 1800
+                    </div>
+                    <div class="answer">
+                        <input type="radio" name="q3" value="correct"> 1789
+                    </div>
+                `;
+            } else if (questionIndex === 6) {
+                document.getElementById('question').innerHTML = `
+                    <p>Question 7: Who was the first Emperor of Rome?</p>
+                    <div class="answer">
+                        <input type="radio" name="q1" value="wrong"> Julius Caesar
+                    </div>
+                    <div class="answer">
+                        <input type="radio" name="q2" value="correct"> Augustus
+                    </div>
+                    <div class="answer">
+                        <input type="radio" name="q3" value="wrong"> Nero
+                    </div>
+                `;
+            } else if (questionIndex === 7) {
+                document.getElementById('question').innerHTML = `
+                    <p>Question 8: What major event is associated with the year 1066 in English history?</p>
+                    <div class="answer">
+                        <input type="radio" name="q1" value="correct"> Battle of Hastings
+                    </div>
+                    <div class="answer">
+                        <input type="radio" name="q2" value="wrong"> Magna Carta signing
+                    </div>
+                    <div class="answer">
+                        <input type="radio" name="q3" value="wrong"> Hundred Years' War
+                    </div>
+                `;
+            } else if (questionIndex === 8) {
+                document.getElementById('question').innerHTML = `
+                    <p>Question 9: Who was the first person to set foot on the moon?</p>
+                    <div class="answer">
+                        <input type="radio" name="q1" value="correct"> Neil Armstrong
+                    </div>
+                    <div class="answer">
+                        <input type="radio" name="q2" value="wrong"> Buzz Aldrin
+                    </div>
+                    <div class="answer">
+                        <input type="radio" name="q3" value="wrong"> John Glenn
+                    </div>
+                `;
+            } else if (questionIndex === 10) {
+                document.getElementById('question').innerHTML = '';
+                document.getElementById('result').innerHTML = `Correct Answers: ${correctAnswers} out of 9`;
+            }
+        }
+    </script>
+</body>
+</html>
