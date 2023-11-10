@@ -42,3 +42,25 @@ function nextquestion(){
         question2.style.visibility = 'visible';
     }
 }
+
+
+
+
+
+
+
+
+function checkAnswer(answer) {
+    const question = questions[currentQuestionIndex];
+
+    if (question && answer === question.correctAnswer) {
+        alert('Правильный ответ!');
+        document.querySelector(`button[data-answer="${answer}"]`).style.backgroundColor = '#4CAF50'; // Зеленый цвет
+    } else {
+        alert('Неправильный ответ. Конец игры.');
+        currentQuestionIndex = questions.length; // Завершение игры после неверного ответа
+    }
+
+    currentQuestionIndex++;
+    displayQuestion();
+}
