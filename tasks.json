@@ -1,1 +1,38 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename = 'css/main.css')}}">
+    <script src="{{url_for('static',filename = 'js/game.js')}}" type="text/javascript"></script>
+    <title>Игра "Кто хочет стать миллионером"</title>
+
+</head>
+<body>
+    <div id="question1" style="visibility: visible;">
+        <h1>Вопрос 1:</h1>
+        <p>Какой язык программирования используется для веб-разработки?</p>
+        <ul>
+            <li><button onclick="checkAnswer('Python')">Python</button></li>
+            <li><button onclick="checkAnswer('Java')">Java</button></li>
+            <li><button onclick="checkAnswer('C++')">C++</button></li>
+            <li><button onclick="checkAnswer('JavaScript')">JavaScript</button></li>
+        </ul>    
+    </div>
+    
+    
+    <div id="question2" style="visibility: hidden;">
+        <h1>Вопрос 2:</h1>
+        <p> Кто был первым президентом США?</p>
+        <ul>
+            <li><button onclick="checkAnswer('Томас Джефферсон')">Томас Джефферсон</button></li>
+            <li><button onclick="checkAnswer('Джордж Вашингтон')">Джордж Вашингтон</button></li>
+            <li><button onclick="checkAnswer('Авраам Линкольн')">Авраам Линкольн</button></li>
+            <li><button onclick="checkAnswer('Джон Адамс')"> Джон Адамс</button></li>
+        </ul>    
+    </div>
+    <button class="vpered" onclick="nextquestion()">вперед</button>
+    
+</body>
+</html>
