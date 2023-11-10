@@ -1,3 +1,41 @@
-*{
-  background-color: red;
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 50px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: rgb(0, 0, 0);
+    color: #ffeeee;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+h1 {
+    color: #000000;
+}
+p {
+    margin-top: 20px;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+li {
+    margin: 10px 0;
+}
+
+.vpered{
+    position:absolute   ;
+    right: 10px;
 }
